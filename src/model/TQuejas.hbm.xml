@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="model.Queja" table="t_quejas">
+    <property name="codDistrito" type="int" column="CODDISTRITO" />  
+    <property name="x" type="int" column="X" />  
+    <property name="y" type="int" column="Y" />  
+    <property name="tipo" type="string">
+      <column length="50" name="TIPO"/>
+    </property>
+    <property name="sexo" type="string">
+      <column length="50" name="SEXO"/>
+    </property>
+    </property>
+    <property perfil="sexo" type="string">
+      <column length="50" name="PERFIL"/>
+    </property>
+    </property>
+    <property name="descripcion" type="string">
+      <column length="50" name="DESCRIPCION"/>
+    </property>
+    
+    <many-to-one name="CODDISTRITO" class="model.Distrito"
+            column="COD" cascade="all" />
+  </class>
+</hibernate-mapping>
