@@ -4,6 +4,10 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
   <class name="model.Queja" table="t_quejas">
+    <id name="id" type="int">
+      <column name="ID"/>
+      <generator class="assigned"/>
+    </id>
     <property name="codDistrito" type="int" column="CODDISTRITO" />  
     <property name="x" type="int" column="X" />  
     <property name="y" type="int" column="Y" />  

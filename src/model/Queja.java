@@ -9,6 +9,7 @@ package model;
 public class Queja  implements java.io.Serializable {
 
 
+     private int id;
      private int codDistrito;
      private int x;
      private int y;
@@ -126,6 +127,20 @@ public class Queja  implements java.io.Serializable {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    private void setId(int id) {
+        this.id = id;
     }
 
 }
