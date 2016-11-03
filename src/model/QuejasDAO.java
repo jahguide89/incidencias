@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -18,11 +20,11 @@ public class QuejasDAO {
     private Session session;
     private Transaction transaction;
     
-    public long guardarQuejas(Queja queja) throws HibernateException{
-        long id = 0;
+    public long guardarQueja(Queja queja) throws HibernateException{
+        int id = 0;
         try {
             iniciaOperacion();
-            id = (long) session.save(queja);
+            id = (int) session.save(queja);
             transaction.commit();
         } catch (HibernateException e) {
             manejarExcepcion(e);
@@ -33,7 +35,7 @@ public class QuejasDAO {
         return id;
     }
     
-    public void actualizaQuejas(Queja queja) throws HibernateException { 
+    public void actualizarQueja(Queja queja) throws HibernateException { 
         try { 
             iniciaOperacion(); 
             session.update(queja); 
@@ -46,7 +48,7 @@ public class QuejasDAO {
         } 
     }
     
-    public void eliminaQuejas(Queja queja) throws HibernateException { 
+    public void eliminarQueja(Queja queja) throws HibernateException { 
         try { 
             iniciaOperacion(); 
             session.delete(queja); 
@@ -59,15 +61,26 @@ public class QuejasDAO {
         } 
     }  
 
-    public Distrito obtenQuejas(long idContacto) throws HibernateException { 
-        Distrito contacto = null;  
+    public Queja obtenerQueja(int idQueja) throws HibernateException { 
+        Queja queja = null;  
         try { 
             iniciaOperacion(); 
-            contacto = (Distrito) session.get(Distrito.class, idContacto); 
+            queja = (Queja) session.get(Queja.class, idQueja); 
         } finally { 
             session.close(); 
         }  
-        return contacto; 
+        return queja; 
+    }
+    
+    public List<Queja> obtenerQuejas() throws HibernateException { 
+        List<Queja> listaQuejas = null;
+        try { 
+            iniciaOperacion(); 
+            listaQuejas = session.createQuery("from Queja").list(); 
+        } finally {
+            session.close(); 
+        }
+        return listaQuejas; 
     }
     
     private void iniciaOperacion() {

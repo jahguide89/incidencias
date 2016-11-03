@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -68,6 +69,17 @@ public class DistritoDAO {
             session.close(); 
         }  
         return distrito; 
+    }
+    
+    public List<Queja> obtenerDistritos() throws HibernateException { 
+        List<Queja> listaDistritos = null;
+        try { 
+            iniciaOperacion(); 
+            listaDistritos = session.createQuery("from Distrito").list(); 
+        } finally {
+            session.close(); 
+        }
+        return listaDistritos; 
     }
     
     private void iniciaOperacion() {
