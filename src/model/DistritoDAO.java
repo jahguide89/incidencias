@@ -71,8 +71,8 @@ public class DistritoDAO {
         return distrito; 
     }
     
-    public List<Queja> obtenerDistritos() throws HibernateException { 
-        List<Queja> listaDistritos = null;
+    public List<Distrito> obtenerDistritos() throws HibernateException { 
+        List<Distrito> listaDistritos = null;
         try { 
             iniciaOperacion(); 
             listaDistritos = session.createQuery("from Distrito").list(); 

@@ -16,14 +16,10 @@ public class Distrito  implements java.io.Serializable {
     public Distrito() {
     }
 
-	
-    public Distrito(int codigo) {
-        this.codigo = codigo;
-    }
     public Distrito(int codigo, String nombre, String mapa) {
-       this.codigo = codigo;
-       this.nombre = nombre;
-       this.mapa = mapa;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.mapa = mapa;
     }
    
     public int getCodigo() {
@@ -33,6 +29,7 @@ public class Distrito  implements java.io.Serializable {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+    
     public String getNombre() {
         return this.nombre;
     }
@@ -47,10 +44,6 @@ public class Distrito  implements java.io.Serializable {
     public void setMapa(String mapa) {
         this.mapa = mapa;
     }
-
-
-
-
 }
 
 

@@ -5,7 +5,6 @@
  */
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -15,7 +14,7 @@ import org.hibernate.Transaction;
  *
  * @author Equipo 18
  */
-public class QuejasDAO {
+public class QuejaDAO {
     
     private Session session;
     private Transaction transaction;

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 02-nov-2016 17:00:05 by Hibernate Tools 4.3.1 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class catalog="distritos" name="model.Distrito" optimistic-lock="version" table="t_distritos">
-    <id name="codigo" type="int">
-      <column name="codigo"/>
-      <generator class="assigned"/>
-    </id>
-    <property name="nombre" type="string">
-      <column length="50" name="nombre"/>
-    </property>
-    <property name="mapa" type="string">
-      <column length="50" name="mapa"/>
-    </property>
-  </class>
+    <class name="model.Distrito" table="t_distritos">
+        <id name="codigo" column="CODIGO">
+            <generator class="identity"></generator>
+        </id>
+        <property name="nombre" type="string" column="NOMBRE"></property>
+        <property name="mapa" type="string" column="MAPA"></property>
+    </class>
 </hibernate-mapping>

@@ -31,6 +31,17 @@ public class Queja  implements java.io.Serializable {
         this.descripcion = descripcion;
     }
 
+    public Queja(int id, int codDistrito, int x, int y, String sexo, String tipo, String perfil, String descripcion) {
+        this.id = id;
+        this.codDistrito = codDistrito;
+        this.x = x;
+        this.y = y;
+        this.sexo = sexo;
+        this.tipo = tipo;
+        this.perfil = perfil;
+        this.descripcion = descripcion;
+    }
+
     /**
      * @return the codDistrito
      */
@@ -139,7 +150,7 @@ public class Queja  implements java.io.Serializable {
     /**
      * @param id the id to set
      */
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 

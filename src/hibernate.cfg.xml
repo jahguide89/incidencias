@@ -6,7 +6,9 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/distritos</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="model/TDistritos.hbm.xml"/>
-    <mapping resource="model/TQuejas.hbm.xml"/>
+    <!-- Configuracion del pool interno -->
+    <property name="hibernate.connection.pool_size">1</property>
+    <mapping class="model.Distrito" resource="model/TDistritos.hbm.xml"/>
+    <mapping class="model.Queja" resource="model/TQuejas.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
